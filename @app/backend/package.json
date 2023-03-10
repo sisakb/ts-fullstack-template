@@ -1,27 +1,32 @@
 {
 	"name": "@app/backend",
 	"version": "1.0.0",
+	"private": true,
 	"description": "",
-	"main": "index.js",
 	"scripts": {
-		"dev": "nodemon src/main.ts",
+		"dev": "nodemon -r dotenv/config src/main.ts dotenv_config_path=../../.env",
 		"build": "tsc && esbuild src/main.ts --bundle --platform=node --packages=external --outdir=dist --sourcemap --target=node18 --format=esm --minify",
-		"lint": "eslint --ext .ts src"
+		"lint": "eslint --ext .ts src",
+		"prisma": "prisma",
+		"postinstall": "pnpm prisma generate"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"type": "module",
 	"dependencies": {
+		"@prisma/client": "^4.11.0",
 		"express": "^4.18.2",
-		"morgan": "^1.10.0"
+		"morgan": "^1.10.0",
+		"zod": "^3.21.4"
 	},
 	"devDependencies": {
-		"@types/morgan": "^1.9.4",
 		"@types/express": "^4.17.17",
+		"@types/morgan": "^1.9.4",
 		"@types/node": "^18.14.1",
 		"esbuild": "^0.17.10",
 		"nodemon": "^2.0.20",
+		"prisma": "^4.11.0",
 		"ts-node": "^10.9.1",
 		"typescript": "^4.9.3"
 	}
