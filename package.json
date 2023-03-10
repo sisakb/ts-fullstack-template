@@ -1,0 +1,28 @@
+{
+	"name": "ts-fullstack-template",
+	"version": "1.0.0",
+	"description": "",
+	"scripts": {
+		"frontend": "pnpm --filter @app/frontend",
+		"backend": "pnpm --filter @app/backend",
+		"dev": "pnpm --filter @app/backend --filter @app/admin --parallel --stream dev",
+		"build": "pnpm --filter @app/backend --filter @app/admin --parallel --stream build",
+		"preinstall": "npx only-allow pnpm",
+		"lint": "pnpm --filter @app/backend --filter @app/admin --parallel --stream lint"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^5.53.0",
+		"@typescript-eslint/parser": "^5.53.0",
+		"eslint": "^8.34.0",
+		"eslint-config-prettier": "^8.6.0",
+		"eslint-plugin-import": "^2.27.5",
+		"eslint-plugin-react": "^7.32.2",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-simple-import-sort": "^10.0.0",
+		"prettier": "^2.8.4",
+		"typescript": "^4.9.3"
+	}
+}
