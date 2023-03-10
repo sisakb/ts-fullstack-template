@@ -1,16 +1,14 @@
-import prisma from "./db"
+import prisma from "~/db"
 import express from "express"
 import morgan from "morgan"
-import env from "./env"
+import env from "~/env.js"
 const app = express()
 
 app.use(morgan("dev"))
 
-console.log(env)
-
 app.get("/", (req, res) => {
 	res.send({
-		message: "Hello World!",
+		message: "Hello World!112",
 	})
 })
 
@@ -28,5 +26,5 @@ app.get("/api/users", async (req, res) => {
 
 const PORT = env.BACKEND_PORT
 app.listen(PORT, () => {
-	console.log(`Backend started on http://localhost:${PORT}`)
+	console.log(`Backend running on http://localhost:${PORT}`)
 })

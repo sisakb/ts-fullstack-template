@@ -29,6 +29,7 @@ export default ({ mode }) => {
 			},
 			port: Number(process.env.FRONTEND_PORT),
 			strictPort: true,
+			open: true,
 		},
 	})
 }

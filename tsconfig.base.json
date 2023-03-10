@@ -12,6 +12,11 @@
 		"moduleResolution": "Node",
 		"resolveJsonModule": true,
 		"isolatedModules": true,
-		"noEmit": true
+		"noEmit": true,
+		"baseUrl": "@app",
+		"paths": {
+			"@backend/*": ["backend/src/*"],
+			"@frontend/*": ["frontend/src/*"]
+		}
 	}
 }

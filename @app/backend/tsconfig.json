@@ -1,18 +1,18 @@
 {
-	"extends": "../../tsconfig.json",
+	"extends": "../../tsconfig.base.json",
 	"include": ["src"],
-	"paths": {
-		"~/*": ["src/*"]
-	},
 	"compilerOptions": {
 		"outDir": "dist",
-		"rootDir": "src",
-		"baseUrl": "src",
 		"module": "ESNext",
-		"noEmit": false
+		"noEmit": true,
+		"baseUrl": ".",
+		"paths": {
+			"~/*": ["src/*"]
+		}
 	},
 	"ts-node": {
 		"esm": true,
-		"experimentalSpecifierResolution": "node"
+		"experimentalSpecifierResolution": "node",
+		"require": ["tsconfig-paths/register"]
 	}
 }

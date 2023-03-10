@@ -24,5 +24,6 @@
 			}
 		],
 		"func-style": ["error", "expression"]
-	}
+	},
+	"ignorePatterns": ["dist", "dist-temp"]
 }
