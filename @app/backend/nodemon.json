@@ -2,6 +2,6 @@
 	"watch": ["src"],
 	"ignore": ["src/**/*.test.ts"],
 	"ext": "ts,mjs,js,json,graphql",
-	"exec": "node esbuild.mjs -d && node ./dist/main.js",
+	"exec": "node esbuild.mjs -d && node -r dotenv/config dist/main.js dotenv_config_path=../../.env",
 	"legacyWatch": true
 }

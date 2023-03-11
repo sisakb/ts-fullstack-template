@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from "vite"
 import path from "path"
 import react from "@vitejs/plugin-react"
+import tsconfigPaths from "vite-tsconfig-paths"
 
 // https://vitejs.dev/config/
 export default ({ mode }) => {
@@ -19,7 +20,7 @@ export default ({ mode }) => {
 	}
 
 	return defineConfig({
-		plugins: [react()],
+		plugins: [react(), tsconfigPaths()],
 		server: {
 			proxy: {
 				"/api": {
@@ -29,7 +30,6 @@ export default ({ mode }) => {
 			},
 			port: Number(process.env.FRONTEND_PORT),
 			strictPort: true,
-			open: true,
 		},
 	})
 }

@@ -1,0 +1,12 @@
+{
+	"extends": ["../../.eslintrc.json"],
+	"rules": {
+		"@typescript-eslint/no-restricted-imports": [
+			"error",
+			{
+				"name": "@backend/db",
+				"message": "Use 'ctx.prisma' inside routers for correct type inference."
+			}
+		]
+	}
+}

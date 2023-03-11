@@ -1,13 +1,12 @@
-import type { TestType } from "@backend/test"
+import { trpc } from "@frontend/trpc"
 
 const App = () => {
-	const a: TestType = {
-		test: "test",
-	}
+	const { data: hello } = trpc.test.users.useQuery()
 
 	return (
 		<div>
 			<h1>It works!</h1>
+			<p>TRPC result: {JSON.stringify(hello?.[0].email)}</p>
 		</div>
 	)
 }

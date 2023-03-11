@@ -1,30 +1,27 @@
-import prisma from "~/db"
-import express from "express"
+import * as trpcExpress from "@trpc/server/adapters/express"
 import morgan from "morgan"
-import env from "~/env.js"
+import express from "express"
+import env from "@backend/env"
+import { createContext } from "@backend/trpc"
+import { appRouter } from "@backend/appRouter"
+
 const app = express()
 
 app.use(morgan("dev"))
 
 app.get("/", (req, res) => {
 	res.send({
-		message: "Hello World!112",
+		message: "Hello World!",
 	})
 })
 
-app.get("/api", (req, res) => {
-	res.send({
-		path: "/api",
-		status: "OK",
-	})
-})
+app.use(
+	"/api/trpc",
+	trpcExpress.createExpressMiddleware({ router: appRouter, createContext })
+)
 
-app.get("/api/users", async (req, res) => {
-	const users = await prisma.user.findMany()
-	res.send(users)
-})
+const PORT = env.BACKEND_PORT || env.PORT
 
-const PORT = env.BACKEND_PORT
 app.listen(PORT, () => {
 	console.log(`Backend running on http://localhost:${PORT}`)
 })

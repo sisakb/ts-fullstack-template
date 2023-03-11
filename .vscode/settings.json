@@ -1,5 +1,32 @@
 {
-	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": true
-	}
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "_files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/node_modules": true,
+        "**/.eslintrc.json": true,
+        "**/.prettierrc": true,
+        "**/.prettierrc.json": true,
+        "**/tsconfig.json": true,
+        "**/tsconfig.base.json": true,
+        "**/tsconfig.node.json": true,
+        "**/vite.config.ts": true,
+        "**/vite.config.js": true,
+        "**/pnpm-lock.yaml": true,
+        "**/pnpm-workspace.yaml": true,
+        "**/.gitignore": true,
+        "**/vite-env.d.ts": true,
+        "**/.vscode": true,
+        "**/nodemon.json": true,
+        "**/esbuild.mjs": true,
+        "**/.npmrc": true,
+        "**/.prettierignore": true,
+        "**/scripts": true
+    }
 }

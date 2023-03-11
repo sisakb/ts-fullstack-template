@@ -1,4 +1,6 @@
 {
+	"strict": true,
+
 	"compilerOptions": {
 		"target": "ESNext",
 		"useDefineForClassFields": true,
@@ -17,6 +19,7 @@
 		"paths": {
 			"@backend/*": ["backend/src/*"],
 			"@frontend/*": ["frontend/src/*"]
-		}
+		},
+		"noImplicitAny": true
 	}
 }

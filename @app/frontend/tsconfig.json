@@ -1,12 +1,12 @@
 {
-	"extends": "../../tsconfig.base.json",
+	"extends": "../../tsconfig.json",
 	"include": ["src"],
 	"references": [{ "path": "./tsconfig.node.json" }],
-	"paths": {
-		"~/*": ["src/*"]
-	},
+	"strict": true,
 	"compilerOptions": {
+		"strict": true,
 		"jsx": "react-jsx",
-		"lib": ["DOM", "DOM.Iterable", "ESNext"]
+		"lib": ["DOM", "DOM.Iterable", "ESNext"],
+		"noImplicitAny": true
 	}
 }

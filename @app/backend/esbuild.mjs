@@ -6,23 +6,24 @@ const isDev =
 	args.includes("--dev") || args.includes("-d") || args.includes("-D")
 
 if (isDev) {
+	console.time("Build time")
 	console.log("Building in development mode")
 }
 
 await build({
 	entryPoints: ["./src/main.ts"],
-	bundle: !isDev,
+	bundle: true,
 	platform: "node",
 	packages: "external",
-	outdir: isDev ? "dist-temp" : "dist",
+	outdir: "dist",
 	sourcemap: true,
 	target: "node18",
 	format: "esm",
 	minify: !isDev,
-	plugins: [
-		TsconfigPathsPlugin.TsconfigPathsPlugin({
-			tsconfig: "./tsconfig.json",
-		}),
-	],
+	plugins: [TsconfigPathsPlugin.TsconfigPathsPlugin({})],
 	logLevel: isDev ? "warning" : "info",
 })
+
+if (isDev) {
+	console.timeEnd("Build time")
+}
